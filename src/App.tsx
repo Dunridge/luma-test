@@ -17,23 +17,27 @@ function App() {
 
   return (
     <Canvas gl={{ useLegacyLights: false, preserveDrawingBuffer: true }}>
-      <ScrollControls pages={10} damping={1} maxSpeed={0.1}>
+      <ScrollControls pages={4} damping={1}>
         <SheetProvider sheet={sheet}>
           <Scene />
         </SheetProvider>
         <Scroll html>
-          <div>
-            <h1 className="text-3xl font-bold underline">Hello World!</h1>
-          </div>
-          <div style={{ background: 'blue' }}>
+          {/* here each div is a scroll page */}
+          <div className="bg-sky-500/30 w-screen h-screen">
             <h1>Here's out H1</h1>
           </div>
-          <div style={{ background: 'blue' }}>
+          <div className="bg-sky-500/30 w-screen h-screen">
             <h1>Here's out H1</h1>
           </div>
-          <div style={{ background: 'blue' }}>
+          <div className="bg-sky-500/30 w-screen h-screen">
             <h1>Here's out H1</h1>
           </div>
+          <div className="bg-sky-500/30 w-screen h-screen">
+            <h1>Here's out H1</h1>
+          </div>
+          {/* <div className="bg-sky-500/30 w-screen h-screen">
+            <h1>Here's out H1</h1>
+          </div> */}
         </Scroll>
       </ScrollControls>
     </Canvas>
