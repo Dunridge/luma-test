@@ -5,6 +5,10 @@
 @import url('../src/styles/header.css');
 @import url('../src/styles/footer.css');
 @import url('../src/styles/model.css');
+@import url('../src/styles/introduction.css');
+@import url('../src/styles/pricing.css');
+@import url('../src/styles/details.css');
+@import url('../src/styles/contact-us.css');
 
 .app {
   max-width: 1600px;

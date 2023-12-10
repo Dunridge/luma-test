@@ -1,17 +1,22 @@
+import { Scroll, ScrollControls, useScroll } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, ScrollControls, useScroll, Environment, Scroll } from "@react-three/drei";
 import { getProject, val } from "@theatre/core";
-
 import {
-  editable as e,
-  SheetProvider,
   PerspectiveCamera,
+  SheetProvider,
   useCurrentSheet
 } from "@theatre/r3f";
-
-import Sword from "./modelComps/GLBModel";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import GLBModel from "./modelComps/GLBModel";
+import ScrollPageContainer from "./components/ScrollPageContainer";
+import { Introduction } from "./components/Introduction";
+import { Details } from "./components/Details";
+import { Pricing } from "./components/Pricing";
+import ContactUs from "./components/ContactUs";
 
+// TODO: separate into components 
+// TODO: add a model that's colored correctly 
 function App() {
   const sheet = getProject('Model animation').sheet('Scene');
 
@@ -22,22 +27,20 @@ function App() {
           <Scene />
         </SheetProvider>
         <Scroll html>
-          {/* here each div is a scroll page */}
-          <div className="bg-sky-500/30 w-screen h-screen">
-            <h1>Here's out H1</h1>
-          </div>
-          <div className="bg-sky-500/30 w-screen h-screen">
-            <h1>Here's out H1</h1>
-          </div>
-          <div className="bg-sky-500/30 w-screen h-screen">
-            <h1>Here's out H1</h1>
-          </div>
-          <div className="bg-sky-500/30 w-screen h-screen">
-            <h1>Here's out H1</h1>
-          </div>
-          {/* <div className="bg-sky-500/30 w-screen h-screen">
-            <h1>Here's out H1</h1>
-          </div> */}
+          <ScrollPageContainer>
+            <Introduction/>
+          </ScrollPageContainer>
+          <ScrollPageContainer>
+            <Details/>
+          </ScrollPageContainer>
+          <ScrollPageContainer>
+            <Pricing/>
+          </ScrollPageContainer>
+          <ScrollPageContainer>
+            <ContactUs/>
+            {/* <h1>Contact us form</h1>
+            <Footer /> */}
+          </ScrollPageContainer>
         </Scroll>
       </ScrollControls>
     </Canvas>
@@ -59,7 +62,7 @@ const Scene = () => {
   })
 
   return (<>
-    <color attach='background' args={['lightblue']} />
+    <color attach='background' />
     {/* <Environment preset="forest" background /> */}
     {/* TODO: set your custom hdr background if you figure out why it's not showing */}
     {/* <Environment files='puresky.hdr'/> */}
