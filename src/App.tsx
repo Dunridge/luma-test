@@ -1,8 +1,9 @@
+import { Model } from "./components/Model";
 
 function App() {
   return (
     <div className="App">
-      App
+      <Model/>
     </div>
   );
 }
