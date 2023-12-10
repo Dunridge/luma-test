@@ -1,14 +1,15 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import { Model } from "./components/Model";
+import { Canvas } from "@react-three/fiber";
+import { useEffect } from "react";
 
 function App() {
+
+  useEffect(() => {
+  }, []); 
+  
   return (
-    <div className="App">
-      <Header/>
-      <Model/>
-      <Footer/>
-    </div>
+    <Canvas>
+      <color attach='background' args={['lightblue']} />
+    </Canvas>
   );
 }
 
