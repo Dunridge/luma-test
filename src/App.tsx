@@ -22,8 +22,8 @@ function App() {
           <Scene />
         </SheetProvider>
         <Scroll html>
-          <div style={{ background: 'blue' }}>
-            <h1>Here's out H1</h1>
+          <div>
+            <h1 className="text-3xl font-bold underline">Hello World!</h1>
           </div>
           <div style={{ background: 'blue' }}>
             <h1>Here's out H1</h1>
