@@ -1,24 +1,26 @@
-import { Scroll, ScrollControls, useScroll } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { getProject, val } from "@theatre/core";
+import { Scroll, ScrollControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { getProject } from "@theatre/core";
 import {
-  PerspectiveCamera,
-  SheetProvider,
-  useCurrentSheet
+  SheetProvider
 } from "@theatre/r3f";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import GLBModel from "./modelComps/GLBModel";
-import ScrollPageContainer from "./components/ScrollPageContainer";
-import { Introduction } from "./components/Introduction";
-import { Details } from "./components/Details";
-import { Pricing } from "./components/Pricing";
 import ContactUs from "./components/ContactUs";
+import { Details } from "./components/Details";
+import { Introduction } from "./components/Introduction";
+import { Pricing } from "./components/Pricing";
+import ScrollPageContainer from "./components/ScrollPageContainer";
+import { Scene } from "./modelComps/Scene";
 
-// TODO: separate into components 
 // TODO: add a model that's colored correctly 
 function App() {
   const sheet = getProject('Model animation').sheet('Scene');
+
+  const pageSections: JSX.Element[] = [
+    <Introduction/>,
+    <Details/>,
+    <Pricing/>,
+    <ContactUs/>
+  ];
 
   return (
     <Canvas gl={{ useLegacyLights: false, preserveDrawingBuffer: true }}>
@@ -27,20 +29,9 @@ function App() {
           <Scene />
         </SheetProvider>
         <Scroll html>
-          <ScrollPageContainer>
-            <Introduction/>
-          </ScrollPageContainer>
-          <ScrollPageContainer>
-            <Details/>
-          </ScrollPageContainer>
-          <ScrollPageContainer>
-            <Pricing/>
-          </ScrollPageContainer>
-          <ScrollPageContainer>
-            <ContactUs/>
-            {/* <h1>Contact us form</h1>
-            <Footer /> */}
-          </ScrollPageContainer>
+          {
+            pageSections.map(section => (<ScrollPageContainer>{section}</ScrollPageContainer>))
+          }
         </Scroll>
       </ScrollControls>
     </Canvas>
@@ -48,28 +39,3 @@ function App() {
 }
 
 export default App;
-
-const Scene = () => {
-  const sheet = useCurrentSheet();
-  const scroll = useScroll();
-
-  useFrame(() => {
-    //@ts-ignore
-    const sequenceLength = val(sheet.sequence.pointer.length);
-    //@ts-ignore
-    sheet.sequence.position = scroll.offset * sequenceLength;
-
-  })
-
-  return (<>
-    <color attach='background' />
-    {/* <Environment preset="forest" background /> */}
-    {/* TODO: set your custom hdr background if you figure out why it's not showing */}
-    {/* <Environment files='puresky.hdr'/> */}
-    {/* <Environment files='src/assets/preset/puresky.hdr'/> */}
-    <PerspectiveCamera theatreKey="Camera" makeDefault position={[1, 0, 0]} fov={90} near={0.1} far={70} />
-    <ambientLight intensity={1} />
-    <directionalLight intensity={3} />
-    <GLBModel />
-  </>);
-}
