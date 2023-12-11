@@ -7,7 +7,8 @@ export default function Header() {
         <div className="header">
             <div className="header__logo-container">
                 <img src={logo} width={76} height={76} className="header__emblem"/>
-                <div className="header__logo-title">Luma AI</div>
+                {/* <div className="header__logo-title">Luma AI</div> */}
+                <div className="header__logo-title">Lamborghini Revuelto <sub>Luma AI</sub></div>
             </div>
         </div>
     );
