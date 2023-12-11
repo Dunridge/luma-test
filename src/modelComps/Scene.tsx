@@ -25,8 +25,8 @@ export const Scene = () => {
         {/* TODO: set your custom hdr background if you figure out why it's not showing */}
         {/* <Environment files='puresky.hdr'/> */}
         {/* <Environment files='src/assets/preset/puresky.hdr'/> */}
-        <PerspectiveCamera theatreKey="Camera" makeDefault position={[1, 0, 0]} fov={90} near={0.1} far={70} />
-        <ambientLight intensity={1} />
+        <PerspectiveCamera theatreKey="Camera" makeDefault position={[2, 0, 0]} fov={90} near={0.1} far={70} />
+        <ambientLight intensity={10} />
         <directionalLight intensity={3} />
         <GLBModel />
     </>);

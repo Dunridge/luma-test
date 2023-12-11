@@ -10,10 +10,10 @@ import { Introduction } from "./components/Introduction";
 import { Pricing } from "./components/Pricing";
 import ScrollPageContainer from "./components/ScrollPageContainer";
 import { Scene } from "./modelComps/Scene";
+import lamboAnimdationData from "./animations/lambo-animation.json";
 
-// TODO: add a model that's colored correctly 
 function App() {
-  const sheet = getProject('Model animation').sheet('Scene');
+  const sheet = getProject('Model animation', { state: lamboAnimdationData }).sheet('Scene');
 
   const pageSections: JSX.Element[] = [
     <Introduction/>,
