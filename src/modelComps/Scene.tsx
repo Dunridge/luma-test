@@ -1,4 +1,4 @@
-import { useScroll } from "@react-three/drei";
+import { Environment, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { val } from "@theatre/core";
 import {
@@ -23,7 +23,7 @@ export const Scene = () => {
         <color attach='background' />
         {/* <Environment preset="forest" background /> */}
         {/* TODO: set your custom hdr background if you figure out why it's not showing */}
-        {/* <Environment files='puresky.hdr'/> */}
+        <Environment files='puresky.hdr'/>
         {/* <Environment files='src/assets/preset/puresky.hdr'/> */}
         <PerspectiveCamera theatreKey="Camera" makeDefault position={[2, 0, 0]} fov={90} near={0.1} far={70} />
         <ambientLight intensity={10} />
