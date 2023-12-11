@@ -1,9 +1,40 @@
+import { Scroll, ScrollControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { getProject } from "@theatre/core";
+import {
+  SheetProvider
+} from "@theatre/r3f";
+import ContactUs from "./components/ContactUs";
+import { Details } from "./components/Details";
+import { Introduction } from "./components/Introduction";
+import { Pricing } from "./components/Pricing";
+import ScrollPageContainer from "./components/ScrollPageContainer";
+import { Scene } from "./modelComps/Scene";
 
+// TODO: add a model that's colored correctly 
 function App() {
+  const sheet = getProject('Model animation').sheet('Scene');
+
+  const pageSections: JSX.Element[] = [
+    <Introduction/>,
+    <Details/>,
+    <Pricing/>,
+    <ContactUs/>
+  ];
+
   return (
-    <div className="App">
-      App
-    </div>
+    <Canvas gl={{ useLegacyLights: false, preserveDrawingBuffer: true }}>
+      <ScrollControls pages={4} damping={1}>
+        <SheetProvider sheet={sheet}>
+          <Scene />
+        </SheetProvider>
+        <Scroll html>
+          {
+            pageSections.map(section => (<ScrollPageContainer>{section}</ScrollPageContainer>))
+          }
+        </Scroll>
+      </ScrollControls>
+    </Canvas>
   );
 }
 

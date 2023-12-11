@@ -1,0 +1,16 @@
+
+.header {
+    padding: 10px 40px;
+    background-color: #0a0a0a;
+    color: white;
+}
+
+.header__logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo-title {
+    margin-left: 8px;
+    font-size: 22px;
+}
