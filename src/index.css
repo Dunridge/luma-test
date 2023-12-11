@@ -9,6 +9,7 @@
 @import url('../src/styles/pricing.css');
 @import url('../src/styles/details.css');
 @import url('../src/styles/contact-us.css');
+@import url('../src/styles/content.css');
 
 .app {
   max-width: 1600px;

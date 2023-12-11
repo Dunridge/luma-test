@@ -3,6 +3,8 @@
     padding: 10px 40px;
     background-color: #0a0a0a;
     color: white;
+    margin-right: -44px;
+    margin-left: -44px;
 }
 
 .header__logo-container {

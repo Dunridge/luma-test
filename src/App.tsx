@@ -11,15 +11,17 @@ import { Pricing } from "./components/Pricing";
 import ScrollPageContainer from "./components/ScrollPageContainer";
 import { Scene } from "./modelComps/Scene";
 import lamboAnimdationData from "./animations/lambo-animation.json";
+import { ContentContainer } from "./components/ContentContainer";
 
 function App() {
   const sheet = getProject('Model animation', { state: lamboAnimdationData }).sheet('Scene');
 
+  // TODO: figure out how to give backgrounds to these
   const pageSections: JSX.Element[] = [
-    <Introduction/>,
-    <Details/>,
-    <Pricing/>,
-    <ContactUs/>
+    <Introduction />,
+    <Details />,
+    <Pricing />,
+    <ContactUs />
   ];
 
   return (
@@ -30,7 +32,12 @@ function App() {
         </SheetProvider>
         <Scroll html>
           {
-            pageSections.map(section => (<ScrollPageContainer>{section}</ScrollPageContainer>))
+            pageSections.map(section => (
+              <ScrollPageContainer>
+                <ContentContainer>
+                  {section}
+                </ContentContainer>
+              </ScrollPageContainer>))
           }
         </Scroll>
       </ScrollControls>
