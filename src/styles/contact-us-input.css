@@ -1,0 +1,13 @@
+
+.contact-us-input {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.contact-us-input input {
+    padding-left: 8px;
+    height: 40px;
+    border: 1px solid #eaecf0;
+    border-radius: 6px;
+}
