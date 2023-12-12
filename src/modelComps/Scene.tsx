@@ -21,9 +21,10 @@ export const Scene = () => {
 
     return (<>
         <color attach='background' />
-        {/* <Environment preset="forest" background /> */}
+        <Environment preset="city" background />
+        {/* <Environment preset="studio" background /> */}
         {/* TODO: set your custom hdr background if you figure out why it's not showing */}
-        <Environment files='puresky.hdr'/>
+        {/* <Environment files='puresky.hdr'/> */}
         {/* <Environment files='src/assets/preset/puresky.hdr'/> */}
         <PerspectiveCamera theatreKey="Camera" makeDefault position={[2, 0, 0]} fov={90} near={0.1} far={70} />
         <ambientLight intensity={10} />

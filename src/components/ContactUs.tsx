@@ -54,7 +54,7 @@ export default function ContactUs() {
     return (
         <div className="contact-us">
             <div className="contact-us__body">
-                <div className="contact-us__title">Contact us form</div>
+                <div className="contact-us__title">Contact us</div>
                 <form className="contact-us__form">
                     {
                         // 1 - decouple handleChange into a separate interface
