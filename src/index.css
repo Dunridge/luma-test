@@ -10,6 +10,7 @@
 @import url('../src/styles/details.css');
 @import url('../src/styles/contact-us.css');
 @import url('../src/styles/content.css');
+@import url('../src/styles/contact-us-input.css');
 
 .app {
   max-width: 1600px;
