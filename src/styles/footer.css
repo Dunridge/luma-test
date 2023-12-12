@@ -11,3 +11,7 @@
     align-items: flex-end;
 }
 
+.footer__copyright {
+    padding-bottom: 32px;
+}
+
