@@ -12,7 +12,7 @@ import { MathUtils } from "three";
 export const Scene = () => {
     const sheet = useCurrentSheet();
     const scroll = useScroll();
-    const { scene, nodes, animations } = useGLTF("/lambo-2.glb");
+    const { scene } = useGLTF("/lambo-2.glb");
 
     const initialRotation = { x: 0, y: 0, z: 0 };
     const currentRotation = useRef(initialRotation);
@@ -25,7 +25,7 @@ export const Scene = () => {
     useEffect(() => {
         updateRotation();
         console.log('scroll.offset', scroll.offset);
-    }, [scroll.offset]);
+    }, [scroll.offset, updateRotation]);
 
     useFrame(() => {
         //@ts-ignore

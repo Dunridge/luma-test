@@ -1,4 +1,4 @@
-import { useGLTF, useAnimations, OrbitControls } from "@react-three/drei";
+import { useGLTF, OrbitControls } from "@react-three/drei";
 
 const GLBModel = () => {
     // TODO: change lambo-2 to lambo 

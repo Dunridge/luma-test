@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <div className="header">
             <div className="header__logo-container">
-                <img src={logo} width={76} height={76} className="header__emblem"/>
+                <img src={logo} alt='' width={76} height={76} className="header__emblem"/>
                 <div className="header__logo-title">Luma AI</div>
             </div>
         </div>

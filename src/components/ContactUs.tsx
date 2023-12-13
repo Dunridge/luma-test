@@ -14,6 +14,15 @@ export default function ContactUs() {
     });
     const [inputs, setInputs] = useState([] as IContactUsInput[]);
 
+    const handleChange = (e: any) => {
+        console.log("e", e.target.value);
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    }
+
+
     useEffect(() => {
         const contactUsInputs: IContactUsInput[] = [
             {
@@ -36,15 +45,8 @@ export default function ContactUs() {
 
         setInputs(contactUsInputs);
 
-    }, [formData]);
+    }, [formData, handleChange]);
 
-    const handleChange = (e: any) => {
-        console.log("e", e.target.value);
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    }
 
     const handleFeedbackSubmit = (e: any) => {
         e.preventDefault();
