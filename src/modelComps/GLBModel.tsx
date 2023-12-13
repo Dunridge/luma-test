@@ -6,7 +6,7 @@ const GLBModel = () => {
     
     return (<>
         {/* TODO: make turn on every screen scroll  */}
-        <OrbitControls enableRotate={false} rotation={undefined} autoRotate/>
+        <OrbitControls enableRotate={true} rotation={undefined} autoRotate/>
         <mesh>
             <primitive object={model.scene}/>
         </mesh>
