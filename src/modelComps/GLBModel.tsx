@@ -5,8 +5,8 @@ const GLBModel = () => {
     const model = useGLTF('./lambo-2.glb');
     
     return (<>
-        {/* TODO: disable manual rotation  */}
-        <OrbitControls rotation={undefined} autoRotate/>
+        {/* TODO: make turn on every screen scroll  */}
+        <OrbitControls enableRotate={false} rotation={undefined} autoRotate/>
         <mesh>
             <primitive object={model.scene}/>
         </mesh>
