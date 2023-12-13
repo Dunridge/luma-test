@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/luma-test/static/css/main.07b3a1e1.css",
+    "main.js": "/luma-test/static/js/main.2aae73ae.js",
+    "static/js/787.4de6e1bd.chunk.js": "/luma-test/static/js/787.4de6e1bd.chunk.js",
+    "static/media/logo.png": "/luma-test/static/media/logo.618056c3943d34a8ef58.png",
+    "index.html": "/luma-test/index.html",
+    "main.07b3a1e1.css.map": "/luma-test/static/css/main.07b3a1e1.css.map",
+    "main.2aae73ae.js.map": "/luma-test/static/js/main.2aae73ae.js.map",
+    "787.4de6e1bd.chunk.js.map": "/luma-test/static/js/787.4de6e1bd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07b3a1e1.css",
+    "static/js/main.2aae73ae.js"
+  ]
+}
