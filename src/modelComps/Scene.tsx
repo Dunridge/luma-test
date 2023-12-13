@@ -17,15 +17,15 @@ export const Scene = () => {
     const initialRotation = { x: 0, y: 0, z: 0 };
     const currentRotation = useRef(initialRotation);
 
-    const updateRotation = () => {
-        // Adjust the rotation based on scroll offset
-        currentRotation.current.y = scroll.offset * Math.PI * 2;
-    };
-
     useEffect(() => {
+        const updateRotation = () => {
+            // Adjust the rotation based on scroll offset
+            currentRotation.current.y = scroll.offset * Math.PI * 2;
+        };
+
         updateRotation();
         console.log('scroll.offset', scroll.offset);
-    }, [scroll.offset, updateRotation]);
+    }, [scroll.offset]);
 
     useFrame(() => {
         //@ts-ignore
