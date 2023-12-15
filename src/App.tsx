@@ -12,9 +12,17 @@ import ScrollPageContainer from "./components/ScrollPageContainer";
 import { Scene } from "./modelComps/Scene";
 import lamboAnimdationData from "./animations/lambo-animation.json";
 import { ContentContainer } from "./components/ContentContainer";
+import { useEffect } from "react";
 
 function App() {
   const sheet = getProject('Model animation', { state: lamboAnimdationData }).sheet('Scene');
+  
+  // temporary removal of the overlay 
+  useEffect(() => {
+    const overlay = document.getElementById('theatrejs-studio-root');
+    //@ts-ignore
+    overlay.style.display = "none";
+  }, [])
 
   // TODO: figure out how to give backgrounds to these
   const pageSections: JSX.Element[] = [
